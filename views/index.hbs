@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {{!--
+    <script type="text/javascript" src="./js/jquery-3.2.1.js"></script> --}}
+    <style>
+        .userGrid {
+            background: gray;
+        }
+
+        .userGrid:nth-child(2n+1) {
+            background: white;
+        }
+
+        .userGrid img {
+            width: 100px;
+            height: 100px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 400;
+            text-transform: capitalize;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="users">
+        <h1>Handle Bars rocks</h1>
+        <a href="/">Home</a>
+        <ul class="usersList">
+            {{#each users as |user|}}
+            <div class="userGrid">
+                <img src="/images/{{user.name.first}} {{ user.name.last}}.jpeg" alt="{{user.name.first}}">
+                <a href="/users/{{user.name.first}} {{ user.name.last}}">{{user.name.first}} {{ user.name.last}}</a>
+                <br>
+                <a href="/users/details/{{user.name.first}} {{user.name.last}}">Details</a>
+            </div>
+            {{/each}}
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{
+    "_id": "599c6029e952b30b32dbd813",
+    "age": 25,
+    "eyeColor": "green",
+    "name": {
+        "first": "Paul",
+        "last": "Oneal",
+        "full": "Paul Oneal"
+    },
+    "company": "OPTICOM",
+    "email": "paul.oneal@opticom.tv",
+    "phone": "+1 (953) 530-3298"
+}

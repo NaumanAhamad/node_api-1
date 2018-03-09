@@ -1,0 +1,13 @@
+{
+    "_id": "599c60299e2dfa605dd0751b",
+    "age": 23,
+    "eyeColor": "blue",
+    "name": {
+        "first": "Natalie",
+        "last": "Glenn",
+        "full": "Natalie Glenn"
+    },
+    "company": "BRAINCLIP",
+    "email": "natalie.glenn@brainclip.name",
+    "phone": "+1 (917) 440-2908"
+}

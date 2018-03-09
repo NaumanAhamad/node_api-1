@@ -1,0 +1,13 @@
+{
+    "_id": "599c6029484f85afc075ca41",
+    "age": 35,
+    "eyeColor": "brown",
+    "name": {
+        "first": "Joyner",
+        "last": "Sheppard",
+        "full": "Joyner Sheppard"
+    },
+    "company": "GOGOL",
+    "email": "joyner.sheppard@gogol.com",
+    "phone": "+1 (958) 472-2970"
+}

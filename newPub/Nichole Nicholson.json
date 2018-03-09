@@ -1,0 +1,13 @@
+{
+    "_id": "599c6029897b1bf4e00b3e8e",
+    "age": 21,
+    "eyeColor": "green",
+    "name": {
+        "first": "Nichole",
+        "last": "Nicholson",
+        "full": "Nichole Nicholson"
+    },
+    "company": "INTERLOO",
+    "email": "nichole.nicholson@interloo.io",
+    "phone": "+1 (890) 461-3679"
+}

@@ -1,0 +1,13 @@
+{
+    "_id": "599c6029db2c3820f6bb4c3f",
+    "age": 26,
+    "eyeColor": "green",
+    "name": {
+        "first": "Kristin",
+        "last": "Cruz",
+        "full": "Kristin Cruz"
+    },
+    "company": "ETERNIS",
+    "email": "kristin.cruz@eternis.net",
+    "phone": "+1 (964) 465-2950"
+}

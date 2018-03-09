@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        button#dis2 {
+            display: none;
+        }
+
+        button#sav {
+            display: none;
+        }
+
+        .userImage {
+            float: left;
+            width: 49%;
+            margin-right: 5px;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .userImage img {
+            width: 100%;
+        }
+
+        .userDetails {
+            float: right;
+            width: 49%;
+            margin-left: 5px;
+        }
+
+        .userDetails ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .userDetails ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        #hide {
+            display: none;
+        }
+
+        .userMain {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/users">Go Back</a>
+    <div class="userMain">
+        <div class="userImage">
+            <img src="/images/{{user.name.first}} {{ user.name.last}}.jpeg" alt="{{user.name.first}}">
+        </div>
+        <div class="userDetails">
+            <ul>
+                <li>
+                    <h1>{{user.name.first}} {{ user.name.last}}</h1>
+                </li>
+                <li id="show">
+                    <b>Company:
+                        <span>{{user.company}}</span>
+                    </b>
+                </li>
+                <li id="hide">
+                    <input type="text" id="comp" value="{{user.company}}">
+                </li>
+                <li id="show">
+                    <b>Email:
+                        <span>{{user.email}}</span>
+                    </b>
+                </li>
+                <li id="hide">
+                    <input type="email" id="emai" value="{{user.email}}">
+                </li>
+                <li id="show">
+                    <b>Age:
+                        <span>{{user.age}}</span>
+                    </b>
+                </li>
+                <li id="hide">
+                    <input type="text" id="age" value="{{user.age}}">
+                </li>
+                <li id="show">
+                    <b>Phone:
+                        <span>{{user.phone}}</span>
+                    </b>
+                </li>
+                <li id="hide">
+                    <input type="text" id="phn" value="{{user.phone}}">
+                </li>
+            </ul>
+            <button id="edt" onclick="edit()">Edit</button>
+            <button id="del" onclick="deleteUser()">Delete</button>
+            <br>
+            <button id="sav" onclick="save()">save</button>
+            <button id="dis2" onclick="cancel()">Cancel</button>
+            <button id="dis" disabled>Cancel</button>
+        </div>
+    </div>
+</body>
+<script>
+    function edit() {
+        $(document).ready(function () {
+            $('li#hide').css('display', 'block');
+            $('li#show').css('display', 'none');
+            $('button#dis').css({
+                display: 'none'
+            });
+            $('button#dis2').css({
+                display: 'block'
+            });
+            $('button#sav').css({
+                display: 'block'
+            });
+        });
+    }
+
+    function cancel() {
+        $(document).ready(function () {
+            $('li#hide').css('display', 'none');
+            $('li#show').css('display', 'block');
+            $('button#dis').css({
+                display: 'block'
+            });
+            $('button#dis2').css({
+                display: 'none'
+            });
+            $('button#sav').css({
+                display: 'none'
+            });
+        });
+    }
+
+    function save() {
+        $.ajax({
+            url: "/users/details/{{user.name.full}}",
+            method: "PUT",
+            data: {
+                company: $('#comp').val(),
+                email: $('#emai').val(),
+                age: $('#age').val(),
+                phone: $('#phn').val()
+            }
+        }).always(function () {
+            cancel();
+            location.reload();
+        });
+    }
+
+    function deleteUser() {
+        $.ajax({
+            url: "/users/details/{{user.name.full}}",
+            method: "DELETE"
+        }).always(function () {
+            location = '/users';
+        });
+    }
+</script>
+
+</html>

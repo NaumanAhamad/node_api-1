@@ -1,0 +1,13 @@
+{
+    "_id": "599c60291f22cb7b333675f1",
+    "age": 20,
+    "eyeColor": "green",
+    "name": {
+        "first": "Glenna",
+        "last": "Riley",
+        "full": "Glenna Riley"
+    },
+    "company": "ROUGHIES",
+    "email": "glenna.riley@roughies.net",
+    "phone": "+1 (846) 411-2918"
+}
