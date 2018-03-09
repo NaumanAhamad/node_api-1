@@ -8,6 +8,8 @@ const engines = require('consolidate');
 const app = express();
 const helpers = require('./helpers.js');
 
+const port = process.env.PORT || 4000;
+
 app.use(function(req, res, next) {
   console.log(`Requested Url: ${req.url} Requested Method: ${req.method}`);
   next();
@@ -93,6 +95,6 @@ app.get('/error/:name', function(req, res) {
 const userName = require('./userName.js');
 app.use('/users/details/:fullname', userName);
 
-const server = app.listen('4000', function(req, res, next) {
+const server = app.listen(port, function(req, res, next) {
   console.log(`App is listening to Port : ${server.address().port}`);
 });
