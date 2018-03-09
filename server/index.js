@@ -48,6 +48,7 @@ app.get('/users', function(req, res) {
     });
   });
   res.render('index.hbs', { users: Users });
+  Users = [];
 });
 
 // adding regular expresssion routes
